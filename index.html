@@ -48,18 +48,44 @@
         <div class="text-one">Hello,</div>
         <div class="text-two">I'm Rishav Srivastava</div>
         <div class="text-three">Web-Developer</div>
-        <div class="text-four" id="changingText">Digital Solutions.</div>
-        <script>
+        <style>
+  .text-four {
+    color: cyan;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    transition: transform 0.5s ease-in-out;
+  }
+</style>
+
+<div class="text-four" id="changingText">Digital Solutions.</div>
+
+<script>
   const texts = ["Digital Solutions.", "App Development", "Website Development", "SEO"];
   let index = 0;
 
   function changeText() {
-    index = (index + 1) % texts.length;
-    document.getElementById("changingText").textContent = texts[index];
+    let textElement = document.getElementById("changingText");
+    
+    // Zoom out effect
+    textElement.style.transform = "scale(0.8)";
+    
+    setTimeout(() => {
+      index = (index + 1) % texts.length;
+      textElement.textContent = texts[index];
+
+      // Zoom in effect
+      textElement.style.transform = "scale(1.2)";
+    }, 500); // Wait for zoom out before changing text
+
+    setTimeout(() => {
+      textElement.style.transform = "scale(1)"; // Return to normal size
+    }, 1000);
   }
 
   setInterval(changeText, 2000); // Change text every 2 seconds
 </script>
+
       </div>
       <div class="button">
     <button onclick="window.location.href='https://wa.link/likm8m';">Contact Me</button>
