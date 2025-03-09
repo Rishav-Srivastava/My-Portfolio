@@ -49,6 +49,17 @@
         <div class="text-two">I'm Rishav Srivastava</div>
         <div class="text-three">Web-Developer</div>
         <div class="text-four" id="changingText">Digital Solutions.</div>
+        <script>
+  const texts = ["Digital Solutions.", "App Development", "Website Development", "SEO"];
+  let index = 0;
+
+  function changeText() {
+    index = (index + 1) % texts.length;
+    document.getElementById("changingText").textContent = texts[index];
+  }
+
+  setInterval(changeText, 2000); // Change text every 2 seconds
+</script>
       </div>
       <div class="button">
     <button onclick="window.location.href='https://wa.link/likm8m';">Contact Me</button>
