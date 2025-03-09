@@ -1,15 +1,3 @@
-//Timer change text menu
-<script>
-  const texts = ["Digital Solutions.", "App Development", "Website Development", "SEO"];
-  let index = 0;
-
-  function changeText() {
-    index = (index + 1) % texts.length;
-    document.getElementById("changingText").textContent = texts[index];
-  }
-
-  setInterval(changeText, 2000); // Change text every 2 seconds
-</script>
 
 // Sticky Navigation Menu
 let nav = document.querySelector("nav");
